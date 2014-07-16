@@ -14,7 +14,7 @@ defmodule ElixirV8.Mixfile do
   def application do
     [
       mod: {ElixirV8, []},
-      applications: [:kernel, :stdlib, :erlang_v8, :poolboy]
+      applications: [:kernel, :stdlib, :erlang_v8]
     ]
   end
 
