@@ -2,19 +2,9 @@ defmodule ElixirV8.Supervisor do
   use Supervisor
 
   def start_link do
-    case :application.get_env(:elixir_v8, :pools) do
-      {:ok, p} ->
-        pools = p
-      _ ->
-        pools = []
-    end
-    case :application.get_env(:elixir_v8, :global_or_local) do
-      {:ok, g} ->
-        global_or_local = g
-      _ ->
-        global_or_local = :global
-    end
-    start_link([], :global)
+    pools = Application.get_env(:elixir_v8, :pools, [])
+    global_or_local = Application.get_env(:elixir_v8, :global_or_local, :global)
+    start_link(pools, global_or_local)
   end
 
   def start_link(pools, global_or_local) do
