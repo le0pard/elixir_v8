@@ -1,4 +1,3 @@
-ElixirV8
-========
+# ElixirV8
 
-** TODO: Add description **
+V8 engine for Elixir with polls.
