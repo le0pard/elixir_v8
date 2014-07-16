@@ -1,4 +1,4 @@
-defmodule ErlangV8.Supervisor do
+defmodule ElixirV8.Supervisor do
   use Supervisor
 
   def start_link do

@@ -18,15 +18,15 @@ defmodule ElixirV8 do
   end
 
   def create_pool(pool_name, size) do
-    JsApiService.ErlangV8.Supervisor.create_pool(pool_name, size, [])
+    ElixirV8.Supervisor.create_pool(pool_name, size, [])
   end
 
   def create_pool(pool_name, size, args) do
-    JsApiService.ErlangV8.Supervisor.create_pool(pool_name, size, args)
+    ElixirV8.Supervisor.create_pool(pool_name, size, args)
   end
 
   def delete_pool(pool_name) do
-    JsApiService.ErlangV8.Supervisor.delete_pool(pool_name)
+    ElixirV8.Supervisor.delete_pool(pool_name)
   end
 
   def eval(pool_name, source) do
