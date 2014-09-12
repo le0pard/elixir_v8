@@ -1,4 +1,4 @@
 %{"erlang_v8": {:git, "git://github.com/strange/erlang-v8.git", "baed135f580c871541959a1ec83f994e147c1ca6", []},
-  "jsex": {:git, "git://github.com/talentdeficit/jsex.git", "661ce8565aaea22aa3576d4ad5e9d11065fe60f9", []},
-  "jsx": {:package, "2.0.4"},
-  "poolboy": {:git, "git://github.com/devinus/poolboy.git", "1d97facfd991f2606ae1d431cb98e624514ed9de", []}}
+  "jsex": {:git, "git://github.com/talentdeficit/jsex.git", "91fbbb51ac18c5ecec45044af107cd079af2ff8b", []},
+  "jsx": {:package, "2.1.1"},
+  "poolboy": {:git, "git://github.com/devinus/poolboy.git", "0d4082dff0e46da7e026e4fe3209784e8ec22fea", []}}
