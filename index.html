@@ -72,7 +72,7 @@ end
 
 <pre><code>js_undescore_lib = Mix.Project.app_path &lt;&gt; "/priv/underscore-min.js"
 
-ElixirV8.create_pool(:main, 10, {:file, js_undescore_lib})
+ElixirV8.create_pool(:main, 10, [{:file, js_undescore_lib}])
 </code></pre>
 
 <p>Using config in mix:</p>
