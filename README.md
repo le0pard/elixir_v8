@@ -37,7 +37,7 @@ config :elixir_v8, pools: [
 
 #### Load js libs to v8
 
-You also can load js libs to each v8 engine in pull:
+You also can load js libs to each v8 engine in pool:
 
 ```
 js_undescore_lib = Mix.Project.app_path <> "/priv/underscore-min.js"
