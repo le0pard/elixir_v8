@@ -61,6 +61,8 @@ iex(4)> ElixirV8.eval_function({:global, :main}, "return data + 13", [13])
 {:ok, 26}
 iex(6)> ElixirV8.eval_function({:global, :main}, "return data * 13", [20])
 {:ok, 260}
+iex(8)> ElixirV8.eval_function({:global, :main}, "return arguments[0] * arguments[1]", [20, 5])
+{:ok, 100}
 ```
 
 ## Contributing
