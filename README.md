@@ -42,7 +42,7 @@ You also can load js libs to each v8 engine in pool:
 ```
 js_undescore_lib = Mix.Project.app_path <> "/priv/underscore-min.js"
 
-ElixirV8.create_pool(:main, 10, {:file, js_undescore_lib})
+ElixirV8.create_pool(:main, 10, [{:file, js_undescore_lib}])
 ```
 
 Using config in mix:
