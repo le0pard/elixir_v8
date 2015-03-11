@@ -31,7 +31,7 @@ defmodule ElixirV8.Mixfile do
     [
       { :erlang_v8, github: "strange/erlang-v8" },
       { :poolboy, github: "devinus/poolboy" },
-      { :jsex, github: "talentdeficit/jsex" }
+      { :exjsx, github: "talentdeficit/jsex" }
     ]
   end
 end

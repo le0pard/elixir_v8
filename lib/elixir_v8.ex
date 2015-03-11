@@ -43,7 +43,7 @@ defmodule ElixirV8 do
 
   def eval_function(pool_name, source, args, timeout) do
     f = fn(worker) ->
-      js_args = case JSEX.encode(args) do
+      js_args = case JSX.encode(args) do
         { :ok, data } -> data
         { :error, _ } -> []
       end
