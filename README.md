@@ -45,7 +45,7 @@ ElixirV8.delete_pool(:test)
 
 ### Usage
 
-Usage of pools (`eval` of js code):
+Usage of pools (`eval` js code):
 
 ```
 iex(2)> ElixirV8.eval({:global, :main}, "1+2")
