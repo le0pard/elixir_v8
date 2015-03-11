@@ -59,10 +59,37 @@ end
 
 <p>Also you can configure ElixirV8 directly from configuration file to get pools automatically created at application startup. In <code>config/config.exs</code>, add :</p>
 
-<pre><code>config :elixir_v8, :pools, [
-  test_pool:   [size: 10],
-  test_pool_2: [size: 20]
+<pre><code>config :elixir_v8, pools: [
+  test_pool:   [{:size, 10}],
+  test_pool_2: [{:size, 20}]
 ]
+</code></pre>
+
+<h4>
+<a id="load-js-libs-to-v8" class="anchor" href="#load-js-libs-to-v8" aria-hidden="true"><span class="octicon octicon-link"></span></a>Load js libs to v8</h4>
+
+<p>You also can load js libs to each v8 engine in pool:</p>
+
+<pre><code>js_undescore_lib = Mix.Project.app_path &lt;&gt; "/priv/underscore-min.js"
+
+ElixirV8.create_pool(:main, 10, {:file, js_undescore_lib})
+</code></pre>
+
+<p>Using config in mix:</p>
+
+<pre><code>js_undescore_lib = Mix.Project.app_path &lt;&gt; "/priv/underscore-min.js"
+js_other_lib = Mix.Project.app_path &lt;&gt; "/priv/some-another-lib.js"
+
+config :elixir_v8,
+  pools: [
+    main: [
+      {:size, 10},
+      {:max_overflow, 10},
+      {:file, js_undescore_lib},
+      {:file, js_other_lib}
+    ]
+  ]
+
 </code></pre>
 
 <h3>
