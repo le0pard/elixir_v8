@@ -29,10 +29,38 @@ Where `:default` is name of poll and `10` is size of pool.
 Also you can configure ElixirV8 directly from configuration file to get pools automatically created at application startup. In `config/config.exs`, add :
 
 ```
-config :elixir_v8, :pools, [
-  test_pool:   [size: 10],
-  test_pool_2: [size: 20]
+config :elixir_v8, pools: [
+  test_pool:   [{:size, 10}],
+  test_pool_2: [{:size, 20}]
 ]
+```
+
+#### Load js libs to v8
+
+You also can load js libs to each v8 engine in pull:
+
+```
+js_undescore_lib = Mix.Project.app_path <> "/priv/underscore-min.js"
+
+ElixirV8.create_pool(:main, 10, {:file, js_undescore_lib})
+```
+
+Using config in mix:
+
+```
+js_undescore_lib = Mix.Project.app_path <> "/priv/underscore-min.js"
+js_other_lib = Mix.Project.app_path <> "/priv/some-another-lib.js"
+
+config :elixir_v8,
+  pools: [
+    main: [
+      {:size, 10},
+      {:max_overflow, 10},
+      {:file, js_undescore_lib},
+      {:file, js_other_lib}
+    ]
+  ]
+
 ```
 
 ### Delete pools
