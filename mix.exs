@@ -4,7 +4,7 @@ defmodule ElixirV8.Mixfile do
   def project do
     [app: :elixir_v8,
      version: "0.2.1",
-     elixir: "~> 1.1",
+     elixir: "~> 1.2",
      deps: deps]
   end
 
