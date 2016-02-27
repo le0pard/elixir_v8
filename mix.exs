@@ -3,8 +3,12 @@ defmodule ElixirV8.Mixfile do
 
   def project do
     [app: :elixir_v8,
-     version: "0.2.1",
+     version: "0.2.2",
      elixir: "~> 1.2",
+     description: description,
+     package: package,
+     build_embedded: Mix.env == :prod,
+     start_permanent: Mix.env == :prod,
      deps: deps]
   end
 
@@ -15,6 +19,24 @@ defmodule ElixirV8.Mixfile do
     [
       mod: {ElixirV8, []},
       applications: [:kernel, :stdlib, :erlang_v8]
+    ]
+  end
+
+  defp description do
+    """
+    V8 engine for Elixir with pools.
+    """
+  end
+
+  defp package do
+    [
+      files: ["lib", "test", "mix.exs", "README.md"],
+      maintainers: ["Alexey Vasiliev"],
+      licenses: ["MIT"],
+      links: %{
+        "GitHub" => "https://github.com/le0pard/elixir_v8",
+        "Docs" => "http://leopard.in.ua/elixir_v8/"
+      }
     ]
   end
 
@@ -30,8 +52,8 @@ defmodule ElixirV8.Mixfile do
   defp deps do
     [
       { :erlang_v8, github: "strange/erlang-v8" },
-      { :poolboy, github: "devinus/poolboy" },
-      { :exjsx, github: "talentdeficit/jsex" }
+      { :poolboy, "~> 1.5" },
+      { :exjsx, "~> 3.2" }
     ]
   end
 end

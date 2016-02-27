@@ -1,4 +1,4 @@
 %{"erlang_v8": {:git, "https://github.com/strange/erlang-v8.git", "1ca13321d5746f3ec20f0c0bfd2bcc8293db71da", []},
-  "exjsx": {:git, "https://github.com/talentdeficit/jsex.git", "d3572b488f10e3b83fadb1fc595fc87f84c35809", []},
-  "jsx": {:hex, :jsx, "2.4.0"},
-  "poolboy": {:git, "https://github.com/devinus/poolboy.git", "3bb48a893ff5598f7c73731ac17545206d259fac", []}}
+  "exjsx": {:hex, :exjsx, "3.2.0"},
+  "jsx": {:hex, :jsx, "2.6.2"},
+  "poolboy": {:hex, :poolboy, "1.5.1"}}
