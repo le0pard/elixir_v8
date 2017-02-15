@@ -24,7 +24,7 @@ end
 ElixirV8.create_pool(:default, 10)
 ```
 
-Where `:default` is name of poll and `10` is size of pool.
+Where `:default` is name of pool and `10` is size of pool.
 
 Also you can configure ElixirV8 directly from configuration file to get pools automatically created at application startup. In `config/config.exs`, add :
 
