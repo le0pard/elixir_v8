@@ -30,15 +30,17 @@ defmodule ElixirV8 do
   end
 
   def eval(pool_name, source) do
-    eval(pool_name, source, timeout)
+    eval(pool_name, source, timeout())
   end
 
   def eval(pool_name, source, timeout) do
-    :poolboy.transaction(pool_name, fn(worker) -> :erlang_v8_vm.eval(worker, source, timeout) end)
+    :poolboy.transaction(pool_name, fn(vm) ->
+      ElixirV8.VM.eval(vm, source, timeout)
+    end)
   end
 
   def eval_function(pool_name, source, args) do
-    eval_function(pool_name, source, args, timeout)
+    eval_function(pool_name, source, args, timeout())
   end
 
   def eval_function(pool_name, source, args, timeout) do
@@ -48,7 +50,7 @@ defmodule ElixirV8 do
         { :error, _ } -> []
       end
       js_function = "(function(){ var data = arguments[0]; " <> source <> "}).apply(null, " <> js_args <> ");"
-      :erlang_v8_vm.eval(worker, js_function, timeout)
+      ElixirV8.VM.eval(worker, js_function, timeout)
     end
     :poolboy.transaction(pool_name, f)
   end
