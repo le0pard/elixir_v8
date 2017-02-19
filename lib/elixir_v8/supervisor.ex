@@ -14,7 +14,7 @@ defmodule ElixirV8.Supervisor do
   def create_pool(pool_name, size, options) do
     args = [
       {:name, {:global, pool_name}},
-      {:worker_module, :erlang_v8_vm},
+      {:worker_module, ElixirV8.VM},
       {:size, size},
       {:max_overflow, 10}]
     pool_spec = :poolboy.child_spec(pool_name, args, options)
@@ -28,7 +28,10 @@ defmodule ElixirV8.Supervisor do
 
   def init([pools, global_or_local]) do
     spec_fun = fn({pool_name, pool_config}) ->
-      args = [{:name, {global_or_local, pool_name}}, {:worker_module, :erlang_v8_vm}] ++ pool_config
+      args = [
+        {:name, {global_or_local, pool_name}},
+        {:worker_module, ElixirV8.VM}
+      ] ++ pool_config
       :poolboy.child_spec(pool_name, args, pool_config)
     end
     pool_specs = Enum.map(pools, spec_fun)
