@@ -3,8 +3,8 @@ defmodule ElixirV8.Mixfile do
 
   def project do
     [app: :elixir_v8,
-     version: "0.2.2",
-     elixir: "~> 1.2",
+     version: "0.3.0",
+     elixir: "~> 1.4",
      description: description(),
      package: package(),
      build_embedded: Mix.env == :prod,
