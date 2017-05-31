@@ -1,4 +1,4 @@
-%{"erlang_v8": {:git, "https://github.com/strange/erlang-v8.git", "c8c8a02be24a43f41cc6db84eeeca3650d2e4270", []},
+%{"erlang_v8": {:git, "https://github.com/strange/erlang_v8.git", "c8c8a02be24a43f41cc6db84eeeca3650d2e4270", []},
   "exjsx": {:hex, :exjsx, "3.2.0", "7136cc739ace295fc74c378f33699e5145bead4fdc1b4799822d0287489136fb", [:mix], [{:jsx, "~> 2.6.2", [hex: :jsx, optional: false]}]},
   "jsx": {:hex, :jsx, "2.6.2", "213721e058da0587a4bce3cc8a00ff6684ced229c8f9223245c6ff2c88fbaa5a", [:mix, :rebar], []},
   "poolboy": {:hex, :poolboy, "1.5.1", "6b46163901cfd0a1b43d692657ed9d7e599853b3b21b95ae5ae0a777cf9b6ca8", [:rebar], []}}

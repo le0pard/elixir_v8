@@ -9,7 +9,7 @@ defmodule ElixirV8.Mixfile do
      package: package(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps()]
+     deps: deps(Mix.env)]
   end
 
   # Configuration for the OTP application
@@ -49,9 +49,16 @@ defmodule ElixirV8.Mixfile do
   #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1"}
   #
   # Type `mix help deps` for more examples and options
-  defp deps do
+
+  defp deps(:publish) do
     [
-      { :erlang_v8, github: "strange/erlang-v8" },
+      { :poolboy, "~> 1.5" },
+      { :exjsx, "~> 3.2" }
+    ]
+  end
+  defp deps(_) do
+    [
+      { :erlang_v8, github: "strange/erlang_v8" },
       { :poolboy, "~> 1.5" },
       { :exjsx, "~> 3.2" }
     ]
