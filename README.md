@@ -100,3 +100,9 @@ iex(8)> ElixirV8.eval_function({:global, :main}, "return arguments[0] * argument
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Publishing to hex
+
+```
+MIX_ENV="publish" mix hex.publish package
+```
